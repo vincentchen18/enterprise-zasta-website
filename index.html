@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products — Zasta Embroidery & Uniforms</title>
+  <title>Zasta Embroidery & Uniforms — Penshurst, NSW</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
@@ -17,8 +17,10 @@
     }
     html{scroll-behavior:smooth;}
     body{font-family:var(--sans);background:var(--white);color:#1a1a2e;line-height:1.6;overflow-x:hidden;}
+    /* TOP BAR */
     .top-bar{background:var(--navy-d);padding:8px 56px;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;letter-spacing:.08em;color:rgba(255,255,255,.6);}
     .top-bar a{color:var(--gold-l);text-decoration:none;}
+    /* NAV */
     nav{position:sticky;top:0;height:var(--nav-h);background:var(--navy);border-bottom:2px solid var(--gold);display:flex;align-items:center;justify-content:space-between;padding:0 56px;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.25);}
     .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
     .nav-logo img{height:52px;width:auto;object-fit:contain;display:block;}
@@ -29,52 +31,59 @@
     .nav-links li a.nav-link:hover::before,.nav-links li a.nav-link.active::before{border-color:rgba(200,168,75,.55);background:rgba(200,168,75,.08);}
     .nav-links li a.nav-btn{display:inline-block;padding:9px 22px;margin-left:10px;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--gold);border-radius:7px;text-decoration:none;transition:background .2s,transform .15s;}
     .nav-links li a.nav-btn:hover{background:var(--gold-l);transform:translateY(-1px);}
-    .page-hero{background:var(--navy);padding:72px 72px 64px;position:relative;overflow:hidden;}
-    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(200,168,75,.1) 0%,transparent 60%),radial-gradient(ellipse at 10% 80%,rgba(200,168,75,.06) 0%,transparent 50%);pointer-events:none;}
-    .page-hero .breadcrumb{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(200,168,75,.65);margin-bottom:16px;position:relative;}
-    .page-hero h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.8rem);font-weight:300;color:var(--white);line-height:1.08;position:relative;}
-    .page-hero h1 em{font-style:italic;color:var(--gold-l);}
-    .page-hero p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.55);margin-top:18px;max-width:560px;line-height:1.75;position:relative;}
+    /* STRIP */
     .strip{background:var(--navy-d);padding:16px 64px;display:flex;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;}
     .strip-item{display:flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap;}
     .strip-item .dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+    /* SECTION UTILS */
     .section-eyebrow{font-size:.68rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
     .section-title{font-family:var(--serif);font-size:clamp(2rem,3vw,2.9rem);font-weight:300;color:var(--navy);line-height:1.18;margin-bottom:24px;}
     .section-title em{font-style:italic;color:var(--gold);}
     .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--navy);color:var(--white);border-radius:7px;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .15s;}
     .btn-primary:hover{background:var(--navy-l);transform:translateY(-2px);}
-    /* PRODUCT SECTIONS */
-    .product-section{padding:80px 72px;background:var(--white);}
-    .product-section:nth-child(even){background:var(--off-white);}
-    .product-section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:20px;}
-    .product-section-header p{font-size:.9rem;font-weight:300;color:var(--muted);max-width:480px;line-height:1.7;}
-    .product-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-    .product-card{background:var(--white);border:1px solid rgba(200,168,75,.18);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;}
-    .product-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(27,45,91,.1);border-color:rgba(200,168,75,.45);}
-    .product-card-img{height:160px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden;}
-    .product-card-img::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 60%,rgba(200,168,75,.15) 0%,transparent 65%);}
-    .product-card-body{padding:24px 26px 28px;}
-    .product-card-name{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--navy);margin-bottom:8px;}
-    .product-card-desc{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.7;}
-    .product-card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
-    .tag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);border:1px solid rgba(200,168,75,.3);border-radius:4px;padding:3px 9px;}
-    /* DECORATION */
-    .decoration-section{padding:96px 72px;background:var(--navy);position:relative;overflow:hidden;}
-    .decoration-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 30%,rgba(200,168,75,.09) 0%,transparent 60%);pointer-events:none;}
-    .decoration-section .section-eyebrow{color:rgba(200,168,75,.7);}
-    .decoration-section .section-title{color:var(--white);}
-    .decoration-section .section-title em{color:var(--gold-l);}
-    .dec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;position:relative;}
-    .dec-card{background:rgba(255,255,255,.04);border:1px solid rgba(200,168,75,.18);border-radius:12px;padding:36px 30px;transition:background .2s,border-color .2s;}
-    .dec-card:hover{background:rgba(200,168,75,.08);border-color:rgba(200,168,75,.4);}
-    .dec-icon{font-size:2.2rem;display:block;margin-bottom:18px;}
-    .dec-name{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--white);margin-bottom:10px;}
-    .dec-desc{font-size:.87rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;}
-    /* CTA BANNER */
-    .cta-banner{background:var(--gold-pale);border-top:1px solid rgba(200,168,75,.3);padding:72px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
-    .cta-banner-text h3{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--navy);line-height:1.2;}
-    .cta-banner-text h3 em{font-style:italic;color:var(--gold);}
-    .cta-banner-text p{font-size:.93rem;font-weight:300;color:var(--muted);margin-top:10px;max-width:480px;line-height:1.75;}
+    .btn-outline{font-size:.8rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid rgba(200,168,75,.4);padding-bottom:2px;transition:color .2s,border-color .2s;}
+    .btn-outline:hover{color:var(--gold);border-color:var(--gold);}
+    /* HERO */
+    .hero{min-height:calc(100vh - var(--nav-h) - 36px);display:grid;grid-template-columns:1fr 1fr;background:var(--off-white);}
+    .hero-text{display:flex;flex-direction:column;justify-content:center;padding:72px 60px 72px 72px;}
+    .hero-eyebrow{font-size:.7rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+    .hero-title{font-family:var(--serif);font-size:clamp(2.8rem,4.5vw,5rem);font-weight:300;line-height:1.08;color:var(--navy);margin-bottom:24px;}
+    .hero-title em{font-style:italic;color:var(--gold);}
+    .hero-body{font-size:.97rem;font-weight:300;color:var(--muted);max-width:420px;line-height:1.8;margin-bottom:38px;}
+    .hero-cta-row{display:flex;gap:18px;align-items:center;}
+    .hero-panel{background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+    .hero-panel::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 35% 55%,rgba(200,168,75,.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 15%,rgba(200,168,75,.07) 0%,transparent 50%);}
+    .panel-logo{position:relative;z-index:1;text-align:center;padding:40px;display:flex;flex-direction:column;align-items:center;gap:20px;}
+    .panel-logo img{height:110px;width:auto;object-fit:contain;opacity:.9;}
+    .panel-tagline{font-family:var(--serif);font-size:1.2rem;font-style:italic;color:rgba(255,255,255,.35);}
+    .hero-badge{position:absolute;bottom:40px;right:40px;border:1px solid rgba(200,168,75,.35);border-radius:10px;padding:16px 22px;text-align:center;background:rgba(255,255,255,.04);backdrop-filter:blur(8px);}
+    .hero-badge .badge-num{font-family:var(--serif);font-size:2.8rem;font-weight:300;line-height:1;color:var(--gold-l);}
+    .hero-badge .badge-label{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,168,75,.65);margin-top:5px;}
+    /* HOME ABOUT */
+    .home-about{padding:96px 72px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;background:var(--white);}
+    .home-about-body{font-size:.95rem;font-weight:300;color:var(--muted);line-height:1.85;}
+    .home-about-body p+p{margin-top:14px;}
+    .cta-link{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;transition:color .2s;}
+    .cta-link:hover{color:var(--gold);}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+    .stat-cell{background:var(--off-white);padding:32px 24px;text-align:center;}
+    .stat-cell .num{font-family:var(--serif);font-size:2.4rem;font-weight:300;color:var(--navy);line-height:1;}
+    .stat-cell .label{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+    /* HOME SERVICES */
+    .home-services{padding:96px 72px;background:var(--off-white);border-top:1px solid rgba(200,168,75,.15);}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+    .service-card{background:var(--white);border:1px solid rgba(200,168,75,.18);border-radius:12px;padding:38px 34px;transition:transform .2s,box-shadow .2s,border-color .2s;}
+    .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(27,45,91,.1);border-color:rgba(200,168,75,.4);}
+    .service-icon{width:48px;height:48px;border-radius:10px;background:var(--gold-pale);border:1px solid rgba(200,168,75,.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:22px;}
+    .service-name{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--navy);margin-bottom:10px;}
+    .service-desc{font-size:.87rem;font-weight:300;color:var(--muted);line-height:1.75;}
+    /* TURNAROUND */
+    .turnaround{background:var(--gold);padding:72px;display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;}
+    .ta-num-block{text-align:center;}
+    .ta-num-block .big-n{font-family:var(--serif);font-size:8rem;font-weight:300;color:var(--navy);line-height:.9;}
+    .ta-num-block .big-unit{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--navy-d);opacity:.7;display:block;margin-top:8px;}
+    .ta-content h3{font-family:var(--serif);font-size:2rem;font-weight:400;font-style:italic;color:var(--navy);margin-bottom:14px;}
+    .ta-content p{font-size:.95rem;font-weight:300;color:var(--navy-d);line-height:1.8;max-width:500px;opacity:.8;}
     /* FOOTER */
     footer{background:var(--navy-d);padding:56px 72px 28px;border-top:2px solid var(--gold);}
     .footer-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:40px;border-bottom:1px solid rgba(200,168,75,.15);margin-bottom:28px;}
@@ -84,25 +93,27 @@
     .footer-links a{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
     .footer-links a:hover{color:var(--gold-l);}
     .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:.74rem;color:rgba(255,255,255,.28);letter-spacing:.04em;}
+    /* RESPONSIVE */
     @media(max-width:1024px){
       .top-bar,.strip{padding-left:32px;padding-right:32px;}
       nav,footer{padding-left:32px;padding-right:32px;}
       .strip{flex-wrap:wrap;gap:16px;}
-      .page-hero{padding:56px 40px 48px;}
-      .product-section,.decoration-section{padding:64px 40px;}
-      .cta-banner{padding:56px 40px;}
-      .product-cards,.dec-grid{grid-template-columns:repeat(2,1fr);}
+      .hero{grid-template-columns:1fr;}.hero-panel{display:none;}
+      .hero-text{padding:72px 40px;}
+      .home-about{grid-template-columns:1fr;padding:72px 40px;}
+      .home-services,.turnaround{padding:72px 40px;}
+      .services-grid{grid-template-columns:1fr;}
+      .turnaround{grid-template-columns:1fr;}
     }
     @media(max-width:640px){
       .top-bar{padding:8px 18px;flex-direction:column;gap:4px;text-align:center;}
       nav{padding:0 18px;}
-      .page-hero{padding:48px 22px 40px;}
-      .product-section,.decoration-section{padding:56px 22px;}
-      .cta-banner{padding:48px 22px;flex-direction:column;align-items:flex-start;}
-      .product-cards,.dec-grid{grid-template-columns:1fr;}
+      .hero-text,.home-about,.home-services,.turnaround{padding:56px 22px;}
       footer{padding:40px 18px 22px;}
       .footer-top{flex-direction:column;gap:20px;}
       .footer-links{flex-wrap:wrap;gap:16px;}
+      .ta-num-block .big-n{font-size:5rem;}
+      .stats-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -118,182 +129,92 @@
       <img src="website_top_left.jpg" alt="Zasta Embroidery & Uniforms" />
     </a>
     <ul class="nav-links">
-      <li><a href="/"            class="nav-link">Home</a></li>
+      <li><a href="/"            class="nav-link active">Home</a></li>
       <li><a href="/about-us/"   class="nav-link">About Us</a></li>
-      <li><a href="/products/"   class="nav-link active">Products</a></li>
+      <li><a href="/products/"   class="nav-link">Products</a></li>
       <li><a href="/contact/"    class="nav-btn">Contact</a></li>
     </ul>
   </nav>
 
-  <div class="page-hero">
-    <p class="breadcrumb">Zasta · Products</p>
-    <h1>Everything your team<br>needs to <em>look the part.</em></h1>
-    <p>From workwear to sportswear, corporate to casual — we supply and decorate the full range. Browse below and contact us for a custom quote.</p>
-  </div>
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Penshurst, NSW · Your local uniform company</p>
+      <h1 class="hero-title">Uniforms &amp;<br><em>embroidery</em><br>done right.</h1>
+      <p class="hero-body">In-house embroidery and printing at 3 Salisbury Street, Penshurst. From workwear to corporate, sportswear to bags — every order finished with care in just five working days.</p>
+      <div class="hero-cta-row">
+        <a href="/products/" class="btn-primary">View Products <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M7.5 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/contact/" class="btn-outline">Get a quote</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="panel-logo">
+        <img src="website_top_left.jpg" alt="Zasta" />
+        <p class="panel-tagline">Crafted with precision in Penshurst</p>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-num">5</div>
+        <div class="badge-label">Working days<br>turnaround</div>
+      </div>
+    </div>
+  </section>
 
   <div class="strip">
-    <div class="strip-item"><span class="dot"></span>Workwear</div>
-    <div class="strip-item"><span class="dot"></span>Corporate</div>
+    <div class="strip-item"><span class="dot"></span>Embroidery</div>
+    <div class="strip-item"><span class="dot"></span>Screen Printing</div>
+    <div class="strip-item"><span class="dot"></span>Heat Transfer</div>
+    <div class="strip-item"><span class="dot"></span>Corporate Uniforms</div>
     <div class="strip-item"><span class="dot"></span>Sportswear</div>
-    <div class="strip-item"><span class="dot"></span>Headwear</div>
-    <div class="strip-item"><span class="dot"></span>Bags</div>
-    <div class="strip-item"><span class="dot"></span>Promotional</div>
+    <div class="strip-item"><span class="dot"></span>Headwear &amp; Bags</div>
   </div>
 
-  <!-- WORKWEAR -->
-  <section class="product-section" id="workwear">
-    <div class="product-section-header">
-      <div><p class="section-eyebrow">Category</p><h2 class="section-title" style="margin-bottom:0;">Workwear</h2></div>
-      <p>Durable, practical garments built for the job site. Available with embroidered logos, screen-printed names, and hi-vis options.</p>
+  <section class="home-about">
+    <div>
+      <p class="section-eyebrow">About Us</p>
+      <h2 class="section-title">Your one-stop<br><em>uniform partner</em><br>since 1999.</h2>
+      <div class="home-about-body">
+        <p>Zasta Embroidery and Uniform is an Australian-registered company established in 1999. Under the ownership of Jacky since 2018, we've grown into a full-service, one-stop uniform company.</p>
+        <p>No order is too complex or too small — we tailor every job to your individual or business needs.</p>
+        <a href="/about-us/" class="cta-link">Learn more about us <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
     </div>
-    <div class="product-cards">
-      <div class="product-card">
-        <div class="product-card-img">🦺</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Hi-Vis Vests &amp; Polos</h3>
-          <p class="product-card-desc">High-visibility garments for construction, logistics, and outdoor trades. Add your logo or name with ease.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span><span class="tag">Printing</span></div>
-        </div>
+    <div class="stats-grid">
+      <div class="stat-cell"><div class="num">1999</div><div class="label">Established</div></div>
+      <div class="stat-cell"><div class="num">5</div><div class="label">Day turnaround</div></div>
+      <div class="stat-cell"><div class="num">4+</div><div class="label">Services</div></div>
+    </div>
+  </section>
+
+  <section class="home-services">
+    <p class="section-eyebrow">Our Services</p>
+    <h2 class="section-title">Three ways we <em>bring your brand</em> to life.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧵</div>
+        <h3 class="service-name">Embroidery</h3>
+        <p class="service-desc">In-house embroidery on any garment. Crisp logos and crests stitched with care — durable, professional, built to last.</p>
       </div>
-      <div class="product-card">
-        <div class="product-card-img">👷</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Trade Shirts &amp; Polos</h3>
-          <p class="product-card-desc">Hard-wearing cotton and poly-blend shirts for tradespeople. Collar and chest logo options available.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span><span class="tag">Heat Transfer</span></div>
-        </div>
+      <div class="service-card">
+        <div class="service-icon">🖨️</div>
+        <h3 class="service-name">Screen Printing</h3>
+        <p class="service-desc">Bold, vibrant prints for large runs. Perfect for team uniforms and events that need sharp, consistent colour.</p>
       </div>
-      <div class="product-card">
-        <div class="product-card-img">🧥</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Jackets &amp; Fleece</h3>
-          <p class="product-card-desc">Softshell, polar fleece, and waterproof jackets. Perfect for team branding on colder-weather jobsites.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span></div>
-        </div>
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <h3 class="service-name">Heat Transfer</h3>
+        <p class="service-desc">Full-colour transfers applied with precision. Ideal for complex designs and small runs with quick turnaround.</p>
       </div>
     </div>
   </section>
 
-  <!-- CORPORATE -->
-  <section class="product-section" id="corporate">
-    <div class="product-section-header">
-      <div><p class="section-eyebrow">Category</p><h2 class="section-title" style="margin-bottom:0;">Corporate Uniform</h2></div>
-      <p>Professional, polished attire for the office, retail floor, or client-facing roles. Tailored to your brand colours and style.</p>
+  <div class="turnaround">
+    <div class="ta-num-block">
+      <div class="big-n">5</div>
+      <span class="big-unit">working days</span>
     </div>
-    <div class="product-cards">
-      <div class="product-card">
-        <div class="product-card-img">👔</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Dress Shirts &amp; Blouses</h3>
-          <p class="product-card-desc">Crisp, professional shirts for corporate environments. Available with discreet chest embroidery or sleeve branding.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-img">👕</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Corporate Polos</h3>
-          <p class="product-card-desc">Smart, versatile polo shirts suitable for offices, clinics, and retail. Available in a wide range of colours.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span><span class="tag">Heat Transfer</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-img">🧣</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Accessories</h3>
-          <p class="product-card-desc">Branded lanyards, scarves, and ties to complete your corporate look with a consistent identity.</p>
-          <div class="product-card-tags"><span class="tag">Custom</span></div>
-        </div>
-      </div>
+    <div class="ta-content">
+      <h3>From order confirmed to delivery.</h3>
+      <p>Once your order is confirmed, we turn it around in just five working days — every time. Fast without compromise, because your team shouldn't be waiting.</p>
     </div>
-  </section>
-
-  <!-- SPORTSWEAR -->
-  <section class="product-section" id="sportswear">
-    <div class="product-section-header">
-      <div><p class="section-eyebrow">Category</p><h2 class="section-title" style="margin-bottom:0;">Sportswear</h2></div>
-      <p>Club kits, training gear, and match-day jerseys for teams of any size. Full kit packages available.</p>
-    </div>
-    <div class="product-cards">
-      <div class="product-card">
-        <div class="product-card-img">⚽</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Team Jerseys</h3>
-          <p class="product-card-desc">Custom jerseys for football, soccer, rugby, cricket and more. Player names and numbers included.</p>
-          <div class="product-card-tags"><span class="tag">Screen Printing</span><span class="tag">Heat Transfer</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-img">🏃</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Training Gear</h3>
-          <p class="product-card-desc">Moisture-wicking training tops, shorts, and tracksuits — lightweight and breathable, with your club branding.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span><span class="tag">Printing</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-img">🧥</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Club Hoodies &amp; Jackets</h3>
-          <p class="product-card-desc">Warm-up and post-game hoodies, zippered jackets, and zip-through tops. Great for club identity off the field.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span><span class="tag">Screen Printing</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HEADWEAR & BAGS -->
-  <section class="product-section" id="headwear">
-    <div class="product-section-header">
-      <div><p class="section-eyebrow">Category</p><h2 class="section-title" style="margin-bottom:0;">Headwear &amp; Bags</h2></div>
-      <p>Branded caps, beanies, and bags to complete your look. Great for promotions, events, or everyday use.</p>
-    </div>
-    <div class="product-cards">
-      <div class="product-card">
-        <div class="product-card-img">🧢</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Caps &amp; Beanies</h3>
-          <p class="product-card-desc">Structured caps, snapbacks, and knit beanies — all available with embroidered logos on the front panel.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-img">🎒</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Backpacks</h3>
-          <p class="product-card-desc">Durable branded backpacks for staff, teams, and events. Embroidery or heat transfer on the front pocket or flap.</p>
-          <div class="product-card-tags"><span class="tag">Embroidery</span><span class="tag">Heat Transfer</span></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-card-img">👜</div>
-        <div class="product-card-body">
-          <h3 class="product-card-name">Totes &amp; Carry Bags</h3>
-          <p class="product-card-desc">Reusable canvas totes and branded carry bags — perfect for corporate gifting, events, and promotional campaigns.</p>
-          <div class="product-card-tags"><span class="tag">Screen Printing</span><span class="tag">Heat Transfer</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DECORATION -->
-  <section class="decoration-section">
-    <p class="section-eyebrow">How we decorate</p>
-    <h2 class="section-title">Every product,<br><em>beautifully branded.</em></h2>
-    <div class="dec-grid">
-      <div class="dec-card"><span class="dec-icon">🧵</span><h3 class="dec-name">Embroidery</h3><p class="dec-desc">Thread-stitched logos with a premium finish. Long-lasting, wash-proof, and available on virtually any fabric.</p></div>
-      <div class="dec-card"><span class="dec-icon">🖨️</span><h3 class="dec-name">Screen Printing</h3><p class="dec-desc">High-impact colour printing for large runs. Sharp edges and consistent results across every garment.</p></div>
-      <div class="dec-card"><span class="dec-icon">🔥</span><h3 class="dec-name">Heat Transfer</h3><p class="dec-desc">Full-colour or vinyl transfers for detailed designs and small runs. Fast application, great results.</p></div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-banner">
-    <div class="cta-banner-text">
-      <h3>Not sure what you need?<br><em>We'll help you figure it out.</em></h3>
-      <p>Get in touch and our team will guide you through product options, decoration methods, and pricing tailored to your order.</p>
-    </div>
-    <a href="/contact/" class="btn-primary">Get a quote <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M7.5 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 
   <footer>
