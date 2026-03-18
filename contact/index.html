@@ -199,14 +199,14 @@
     <div class="contact-form-wrap">
       <h3>Request a <em>quote.</em></h3>
       <p>Fill in the details below and we'll get back to you with pricing and options.</p>
-      <div class="form-grid">
-        <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="e.g. Jacky" /></div>
-        <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="e.g. Smith" /></div>
-        <div class="form-group full"><label for="email">Email Address</label><input type="email" id="email" placeholder="you@example.com" /></div>
-        <div class="form-group full"><label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="04XX XXX XXX" /></div>
+      <form action="https://formspree.io/f/xojkyjjk" method="POST" class="form-grid">
+        <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="e.g. Jacky" required /></div>
+        <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="e.g. Smith" required /></div>
+        <div class="form-group full"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="you@example.com" required /></div>
+        <div class="form-group full"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" /></div>
         <div class="form-group full">
           <label for="service">Service Required</label>
-          <select id="service">
+          <select id="service" name="service" required>
             <option value="" disabled selected>Select a service…</option>
             <option>Embroidery</option>
             <option>Screen Printing</option>
@@ -216,7 +216,7 @@
         </div>
         <div class="form-group full">
           <label for="product">Product Type</label>
-          <select id="product">
+          <select id="product" name="product_type">
             <option value="" disabled selected>What are you decorating?</option>
             <option>Workwear</option>
             <option>Corporate Uniform</option>
@@ -226,13 +226,13 @@
             <option>Not sure yet</option>
           </select>
         </div>
-        <div class="form-group full"><label for="qty">Approximate Quantity</label><input type="text" id="qty" placeholder="e.g. 20 polo shirts" /></div>
-        <div class="form-group full"><label for="msg">Additional Details</label><textarea id="msg" placeholder="Tell us about your design, deadline, or any other requirements…"></textarea></div>
-      </div>
+        <div class="form-group full"><label for="qty">Approximate Quantity</label><input type="text" id="qty" name="quantity" placeholder="e.g. 20 polo shirts" /></div>
+        <div class="form-group full"><label for="msg">Additional Details</label><textarea id="msg" name="message" placeholder="Tell us about your design, deadline, or any other requirements…"></textarea></div>
       <div class="form-submit">
-        <button type="button">Send Enquiry →</button>
+        <button type="submit">Send Enquiry →</button>
         <p class="form-note">We aim to respond within one business day.</p>
       </div>
+      </form>
     </div>
   </section>
 
